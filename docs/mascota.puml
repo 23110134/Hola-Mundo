@@ -1,0 +1,78 @@
+@startuml mascota 
+
+package Animal
+{
+class Mascota{
+    -casa:Casa 
+    +saltar()
+}
+class Boca
+{
+    -dientes:Boca
+    +masticar()
+}
+}
+
+package Prendas{
+class Sabana 
+class Ropa
+class Sueter
+class Gorra 
+}
+
+package Articulos
+{
+class Juguete 
+class Pelota
+class Muebles
+class Carro
+class Porteria
+
+class Juego
+{
+    -porteria:Juego
+}
+class Canasta
+{
+
+}
+class Piano
+class Vehiculo  
+
+}
+
+package Comida{
+class Fruta
+class Carne
+class Alimento
+}
+ 
+package Casa{
+class Casa 
+ class Habitacion
+ class Terraza
+}
+
+
+
+
+Mascota "1" o--"*" Juguete
+Mascota "1" o-- "1" Boca
+Carne  --|>  Alimento 
+Alimento <|-- Fruta
+Mascota "1" --o "1"Casa
+Casa "1" *-- "*" Habitacion
+Habitacion "1" *-- "*" Muebles
+Muebles "1" *-- "*" Sabana 
+Juguete <|-- Pelota 
+Casa "1" *-- "*" Terraza
+Terraza "1" *-- "*" Porteria
+Alimento "*" --o "1" Mascota
+Carro "*" --o "1" Mascota  
+Carro --|> Vehiculo
+Ropa "*" --o "1" Mascota  
+Ropa <|-- Sueter
+Ropa <|-- Gorra 
+Juego "*" --o "1" Mascota
+Juego --|> Canasta  
+Piano --|> Juguete
